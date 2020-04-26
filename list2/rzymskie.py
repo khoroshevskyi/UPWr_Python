@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Oleksandr Khoroshevskyi
 # Bioinformatics 1
 # UPWr
@@ -15,37 +17,25 @@ class RomanNumerals():
     """Converting roman numbers to arabic numbers"""
 
     def __init__(self, rome_string):
-        rome_list = self.create_rome_list(rome_string)
-        arabic_list = self.rome_list_to_arabic(rome_list)
-        arabic_number = self.calculate_sum(arabic_list)
+        arabic_number = self.calculate_sum(rome_string)
         print("Our number is: ", arabic_number)
 
-    def create_rome_list(self, rome_string):
-        rome_list = list(rome_string)
-        return(rome_list)
-
-    def rome_list_to_arabic(self,rome_list):
-        arabic_list = []
-        for symbol in rome_list:
-            arabic_list.append(ROME_SIMBOLS[symbol])
-        return(arabic_list)
-
-    def calculate_sum(self, arabic_list):
-        self.arabic_list = arabic_list
-        arabic_list_length = len(self.arabic_list)
+    def calculate_sum(self, rome_string):
+        arabic_list_length = len(rome_string)
         ar_str = 0
-        self.list_nr = 0
+        list_nr = 0
 
-        while self.list_nr < arabic_list_length:
-            value = self.arabic_list[self.list_nr]
+        while list_nr < arabic_list_length:
+            value = ROME_SIMBOLS[rome_string[list_nr]]
 
-            if self.list_nr == len(self.arabic_list):
-                if self.arabic_list[self.list_nr] < self.arabic_list[(self.list_nr + 1)]:
-                    value = - self.arabic_list[self.list_nr]
+            if list_nr+1 != len(rome_string):
+                if ROME_SIMBOLS[rome_string[list_nr]] < ROME_SIMBOLS[rome_string[(list_nr + 1)]]:
+                    value = - ROME_SIMBOLS[rome_string[list_nr]]
 
             ar_str += value
-            self.list_nr += 1
+            list_nr += 1
         return(ar_str)
 
 if __name__ == "__main__":
-    RomanNumerals("MMDCCLXXXIV")
+    RomanNumerals("CMIV")
+    

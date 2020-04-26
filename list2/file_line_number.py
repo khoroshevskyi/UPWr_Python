@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import os
 
 class Python_Line_Counter():
