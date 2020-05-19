@@ -86,7 +86,7 @@ class CoronaTime():
 
         for mn in self.my_arr:
             self.col_name.append(mn[0])
-            self.cases_table.append(int(mn[-1]))
+            self.cases_table.append(int(mn[-1])) # -1 all // 13 -slask // 1 -dolny
 
     def print_table(self):
         # simple printing data with col names

@@ -1,0 +1,13 @@
+a1
+pudlo_
+pudlo_a03EOF when reading a line
+a1
+blad__ '\n'
+a1
+pudlo_
+a1
+pudlo_d10local variable 'u_move' referenced before assignment
+a1
+pudlo_h06local variable 'u_move' referenced before assignment
+a1
+pudlo_
