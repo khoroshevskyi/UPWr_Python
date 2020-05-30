@@ -47,10 +47,10 @@ class Ui_Form(object):
         text = ("The list of best scores that users made:\n" +
                 "Player       ||     Score\n "+ "-"* 30 + "\n")
         data = self.open_read_db()
-        data = sorted(data, key = lambda i: i['player_score'])
+        data = sorted(data, key = lambda i: i['player_score'],reverse=True)
 
         for item in data:
-            text = (text + item["player_name"] + " "*10  + "||" + " "*10  + str(item['player_score']) + "\n")
+            text = (text + item["player_name"] + " "*(20-len(item["player_name"]))  + "||" + " "*10  + str(item['player_score']) + "\n")
         return(text)
 
     # reading data from mongoDB
@@ -72,6 +72,7 @@ class Ui_Form(object):
             self.client.close()
             print("Server connection has been closed.")
             return(data)
+
 '''
 if __name__ == "__main__":
     import sys
