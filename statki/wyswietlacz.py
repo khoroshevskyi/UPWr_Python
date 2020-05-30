@@ -74,4 +74,4 @@ if __name__ == "__main__":
 
     # if you want to get board without terminal do this:
     #loc = CreateBoard().return_ships_position()
-    #Wyswietlacz(loc)
+    Wyswietlacz(loc)
