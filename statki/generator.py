@@ -26,18 +26,9 @@ class CreateBoard():
             ]
 
     SIZE = 10
-    BOARD = [['0','0','0','0','0','0','0','0','0','0'],
-            ['0','0','0','0','0','0','0','0','0','0'],
-            ['0','0','0','0','0','0','0','0','0','0'],
-            ['0','0','0','0','0','0','0','0','0','0'],
-            ['0','0','0','0','0','0','0','0','0','0'],
-            ['0','0','0','0','0','0','0','0','0','0'],
-            ['0','0','0','0','0','0','0','0','0','0'],
-            ['0','0','0','0','0','0','0','0','0','0'],
-            ['0','0','0','0','0','0','0','0','0','0'],
-            ['0','0','0','0','0','0','0','0','0','0']]
+    BOARD = [['0' for column in range(10)] for row in range(10)]
 
-    def __init__(self, board = BOARD, ships = SHIPS):
+    def __init__(self, board=BOARD, ships=SHIPS):
         ships_list = []
         for ship in ships:
             for n in range(ship["number"]):
@@ -47,7 +38,7 @@ class CreateBoard():
         print(ships_list)
 
     def return_board(self):
-        return(self.board)
+        return self.board
 
     def return_ships_position(self):
         return(self.ships_list)
